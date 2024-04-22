@@ -1,39 +1,21 @@
-name: Run Selenium
+name: Ejecutar script Selenium
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  run_selenium:
+  test_selenium:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-      
-      - name: Install Chrome
-        run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install ./google-chrome-stable_current_amd64.deb -y
-      
-      - name: Install ChromeDriver
-        run: |
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/local/bin/
-          sudo chmod +x /usr/local/bin/chromedriver
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install selenium
-      
-      - name: Run Selenium script
-        run: |
-          python $GITHUB_WORKSPACE/pruebaOHMixtral.py
+    - name: Checkout del repositorio
+      uses: actions/checkout@v2
+
+    - name: Instalar dependencias
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y chromium-browser
+        pip install selenium
+
+    - name: Ejecutar script Selenium
+      run: |
+        python pruebaOHMixtral.py
