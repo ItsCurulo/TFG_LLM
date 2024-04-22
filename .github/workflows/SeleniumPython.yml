@@ -17,7 +17,18 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-          
+      
+      - name: Install Chrome
+        run: |
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install ./google-chrome-stable_current_amd64.deb -y
+      
+      - name: Install ChromeDriver
+        run: |
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -25,4 +36,4 @@ jobs:
       
       - name: Run Selenium script
         run: |
-          python pruebaOHMixtral.py
+          python $GITHUB_WORKSPACE/pruebaOHMixtral.py
