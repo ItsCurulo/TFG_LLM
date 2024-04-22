@@ -23,4 +23,4 @@ jobs:
 
     - name: Ejecutar script Selenium
       run: |
-        python script_selenium.py
+        python pruebaOHMixtral.py
