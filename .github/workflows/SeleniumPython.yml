@@ -24,9 +24,12 @@ jobs:
           sudo apt install ./google-chrome-stable_current_amd64.deb -y
           LATEST_CHROME_VERSION=$(google-chrome --version | cut -d' ' -f3 | cut -d'.' -f1)
           LATEST_CHROMEDRIVER_VERSION=$(curl -sSL "https://chromedriver.chromium.org/downloads/LATEST_RELEASE")
-          wget "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip"  
-          sudo unzip chromedriver_linux64.zip -d /usr/local/bin
+          FILENAME=$(echo $LATEST_CHROMEDRIVER_VERSION | cut -d'/' -f -1)  # Extract filename only
+          wget "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION" -O "$FILENAME.zip"
+          sudo unzip "$FILENAME.zip" -d /usr/local/bin
           sudo chmod +x /usr/local/bin/chromedriver
+          rm "$FILENAME.zip"  # Clean up temporary file
+
       
       - name: Install dependencies
         run: |
