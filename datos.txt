@@ -1,8 +1,0 @@
-file:///C:/Users/carlo/OneDrive/Escritorio/TFG/paginaPrincipal.html
-file:///C:/Users/carlo/OneDrive/Escritorio/TFG/paginaSecundaria.html
-file:///C:/Users/carlo/OneDrive/Escritorio/TFG/ultimaPagina.html
-Peticion para crear la páginas:
-Creame 3 páginas web html con los siguientes requisitos:
--paginaPrincipal:La primera página web tiene un formulario para poner nombre, contraseña y un boton de ok. Cuando se pulsa el boton de ok (tras rellenar los datos obligatoriamente) se accede a la paginasecundaria
--paginasecundaria: esta pagina solo tendrá un par de botones. El primero e utilizará para volver a la página anterior (paginaPrincipal) siendo su identificador boton1 y el otro botón servirá para acceder a la ultimaPagina siendo su identificador boton2
--ultimaPagina: En esta página aparecerá un mensaje de enhorabuena por llegar hasta aquí y nada más
