@@ -17,4 +17,5 @@ jobs:
 
     - name: Ejecutar script Selenium
       run: |
-        python .\cgi-bin\pruebaOHMixtral.py
+        cd .\cgi-bin\
+        python pruebaOHMixtral.py
