@@ -7,7 +7,7 @@ from time import sleep
 driver = webdriver.Chrome()
 
 # Abre la primera página en una nueva ventana del navegador.
-driver.get('file:///D:\Github\TFG_LLM/paginaPrincipal.html')
+driver.get('paginaPrincipal.html')
 
 # Intenta encontrar el formulario y completarlo con datos de prueba.
 nombre = driver.find_element(By.NAME, 'nombre')
