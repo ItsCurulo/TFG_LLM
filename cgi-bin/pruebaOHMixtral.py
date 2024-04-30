@@ -12,7 +12,12 @@ ruta=os.path.dirname(os.path.abspath(__file__))
 
 ruta_pagina_principal = os.path.join(ruta, '../paginaPrincipal.html')
 # Abre la primera página en una nueva ventana del navegador.
-driver.get(ruta_pagina_principal)
+
+if not os.path.exists(ruta_pagina_principal):
+    print("File not found:", ruta_pagina_principal)
+    exit
+
+driver.get('file://'+ ruta_pagina_principal)
 
 # Espera hasta que el elemento 'nombre' esté presente en la página
 nombre = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, 'nombre')))
@@ -31,7 +36,7 @@ sleep(5)
 
 # Haz clic en el segundo botón y espera que la última página se cargue.
 segundo_boton.click()
-WebDriverWait(driver, 10).until(EC.title_contains('Enhorabuena!'))
+WebDriverWait(driver, 10).until(EC.title_contains('Enhorabuena'))
 
 # Imprime el título de la última página en consola y cierra el navegador.
 print(driver.title)
