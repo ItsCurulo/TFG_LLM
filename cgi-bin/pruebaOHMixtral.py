@@ -3,14 +3,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
+import os
 
 # Configuración del ChromeDriver
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')  # Esto ejecutará Chrome en modo headless, sin abrir la ventana del navegador
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome()
 
+ruta=os.path.dirname(os.path.abspath(__file__))
+
+ruta_pagina_principal = os.path.join(ruta, '../paginaPrincipal.html')
 # Abre la primera página en una nueva ventana del navegador.
-driver.get('paginaPrincipal.html')
+driver.get(ruta_pagina_principal)
 
 # Espera hasta que el elemento 'nombre' esté presente en la página
 nombre = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, 'nombre')))
