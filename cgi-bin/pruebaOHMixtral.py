@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -36,7 +38,7 @@ sleep(5)
 
 # Haz clic en el segundo botón y espera que la última página se cargue.
 segundo_boton.click()
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//h1[contains(text(),'Enhorabuena')]")))
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//h1[contains(text(),'Enhorabuena!')]")))
 
 # Imprime el título de la última página en consola y cierra el navegador.
 print(driver.title)
