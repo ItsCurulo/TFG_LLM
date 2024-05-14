@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera página web interactiva</title>
+</head>
+<body>
+    <header>
+        <h1>Mi primera página web interactiva</h1>
+    </header>
+    <div class="container">
+        <h2>Bienvenido a mi página web</h2>
+        <p>Esta es una página web muy sencilla pero completa con elementos interactivos.</p>
+        <p>Aquí puedes interactuar con los elementos.</p>
+        <button id="boton" onclick="mostrarMensaje()">¡Haz clic aquí!</button>
+        <p id="mensaje" style="display:none;">¡Has hecho clic en el botón!</p>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            var mensaje = document.getElementById("mensaje");
+            mensaje.style.display = "block";
+        }
+    </script>
+</body>
+</html>
