@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1</title>
+    <style>
+        #mensaje {
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Página 1</h1>
+    </header>
+    <div class="container">
+        <h2>Bienvenido a la página 1</h2>
+        <p>Esta es la primera página.</p>
+        <p><a href="paginaGemela2.html">Ir a la página 2</a></p>
+        <p id="mensaje" style="display:none; color:green; font-weight:bold;">¡Felicidades! Has vuelto desde la página 2.</p>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const vuelta = urlParams.get('vuelta');
+        if (vuelta) {
+            var mensaje = document.getElementById("mensaje");
+            mensaje.style.display = "block";
+        }
+    </script>
+</body>
+</html>
