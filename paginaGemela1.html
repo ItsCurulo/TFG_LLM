@@ -3,14 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página 1</title>
+    <title>Página Gemela1</title>
     <style>
-        #mensaje {
-            color: green;
-            font-weight: bold;
-            display: none;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-    </style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -18,18 +53,12 @@
         <h1>Página 1</h1>
     </header>
     <div class="container">
-        <h2>Bienvenido a la página 1</h2>
-        <p>Esta es la primera página.</p>
-        <p><a href="paginaGemela2.html">Ir a la página 2</a></p>
-        <p id="mensaje" style="display:none; color:green; font-weight:bold;">¡Felicidades! Has vuelto desde la página 2.</p>
+        <h2>Introduce tu nombre</h2>
+        <form action="paginaGemela2.html" method="GET">
+            <input type="text" name="nombre" placeholder="Escribe tu nombre" required>
+            <br><br>
+            <input type="submit" value="Enviar">
+        </form>
     </div>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const vuelta = urlParams.get('vuelta');
-        if (vuelta) {
-            var mensaje = document.getElementById("mensaje");
-            mensaje.style.display = "block";
-        }
-    </script>
 </body>
 </html>

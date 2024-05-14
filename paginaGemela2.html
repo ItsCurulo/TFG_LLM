@@ -3,16 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página 2</title>
+    <title>Página Gemela2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Página 2</h1>
     </header>
     <div class="container">
-        <h2>Bienvenido a la página 2</h2>
-        <p>Esta es la segunda página.</p>
-        <p><a href="paginaGemela1.html">Volver a la página 1</a></p>
+        <h2>Bienvenido</h2>
+        <p>
+            <p>
+                ¡Hola, <span id="nombreUsuario">Usuario</span>!
+            </p>
+        </p>
+        <p>Gracias por visitar esta página.</p>
+        <p><a href="paginaGemela2.html">Volver a la página anterior</a></p>
     </div>
+    <script>
+        // Obtiene el nombre de la URL
+        function obtenerNombre() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nombre = urlParams.get('nombre');
+            return nombre ? nombre : 'Usuario';
+        }
+        // Muestra el nombre en la página
+        document.getElementById('nombreUsuario').innerText = obtenerNombre();
+    </script>
 </body>
 </html>
