@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
-#probamos github actions
+
 # Configura el navegador para usar Chrome
 options = webdriver.ChromeOptions()
 options.add_argument('--no-sandbox')
